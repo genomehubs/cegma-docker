@@ -9,11 +9,9 @@ fi
 
 cegma -g $ASSEMBLY
 
-if [ -s output.cegma.errors ]; then
-  mv  output.completeness_report /out/$ASSEMBLY.cegma.completeness_report.txt
-  mv  output.cegma.gff /out/$ASSEMBLY.cegma.gff
-else
-  mv  output.cegma.errors /out/$ASSEMBLY.cegma.errors
-fi
 
 
+mv  output.completeness_report /out/$ASSEMBLY.cegma.completeness_report.txt
+mv  output.cegma.gff /out/$ASSEMBLY.cegma.gff
+
+cat output.cegma.errors
