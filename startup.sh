@@ -7,9 +7,11 @@ if [[ $ASSEMBLY =~ \.gz$ ]]; then
   ASSEMBLY=${ASSEMBLY%.gz}
 fi
 
-cegma -g $ASSEMBLY
+if [ -z $THREADS ]; then
+  THREADS=1
+fi
 
-
+cegma -g $ASSEMBLY -T $THREADS
 
 mv  output.completeness_report /out/$ASSEMBLY.cegma.completeness_report.txt
 mv  output.cegma.gff /out/$ASSEMBLY.cegma.gff
