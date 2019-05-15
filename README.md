@@ -10,6 +10,7 @@ docker run -d \
            -v `pwd`/sequence:/in \
            -v `pwd`/cegma:/out \
            -e ASSEMBLY=scaffolds.fa.gz \
+           -e THREADS=16 \
            genomehubs/cegma:latest
 ```
 
